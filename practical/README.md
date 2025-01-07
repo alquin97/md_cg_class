@@ -4,6 +4,40 @@
 
 ## GROMACS simulation
 
+Extract the files downloaded from CHARMM-GUI to your working directory.
+
+```
+tar -xvf charmm-gui.tar
+```
+
+CHARMM-GUI does the whole preparation process for us and provides us with all the intermediate files used from steps 1-5. It provides as well standard molecular dynamics parameters (.mdp) files to get the simulations started right out of the box. For the purposes of this tutorial we won't tweak any of the parameters set by default but keep in mind that you can freely modify the .mdp files according to your needs.
+
+Navigate to the `charmm-gui-XXXXXXXXXX/gromacs/` directory. Here you have the coordinates (step5_charmm2gmx.pdb) and topology file (system.top) required to produce the portable binary run (.tpr) for any GROMACS job, as well as the .mdp instructions for each minimization, equilibration and production step. Each consecutive step is executed from the `README` script found the same folder. Examine the script and try to figure out what commands will be executed.
+
+> Question: How many minimization, equilibration and production steps are executed?
+
+Once you are ready, execute the README shell script.
+
+```
+chmod +x README
+csh README
+```
+
+Pay attention to the output printed on the screen. It is likely that the process didn't run successfully.
+
+> Question: Can you spot the ERROR? In which step did the procedure failed?
+
+There are different ways in which the specific error that we get can be addressed. However, for the sake of simplicity, we will do a quick and dirty fix that consists on editing the `README` file with the `sed` shell command.
+
+```
+!sed -i '' -e 's/        gmx grompp -f step6.${cnt}_equilibration.mdp -o step6.${cnt}_equilibration.tpr -c step6.${pcnt}_minimization.gro -r step5_charmm2gmx.pdb -p system.top -n index.ndx/        gmx grompp -f step6.${cnt}_equilibration.mdp -o step6.${cnt}_equilibration.tpr -c step6.${pcnt}_minimization.gro -r step5_charmm2gmx.pdb -p system.top -n index.ndx -maxwarn 1/g' README
+!sed -i '' -e 's/        gmx grompp -f step6.${cnt}_equilibration.mdp -o step6.${cnt}_equilibration.tpr -c step6.${pcnt}_equilibration.gro -r step5_charmm2gmx.pdb -p system.top -n index.ndx/        gmx grompp -f step6.${cnt}_equilibration.mdp -o step6.${cnt}_equilibration.tpr -c step6.${pcnt}_equilibration.gro -r step5_charmm2gmx.pdb -p system.top -n index.ndx -maxwarn 1/g' README
+!sed -i '' -e 's/gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p system.top -n index.ndx/gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p system.top -n index.ndx -maxwarn 1/g' README
+
+```
+
+Now the 
+
 ## Analysis
 
 ### Number of contacts
