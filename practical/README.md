@@ -1,10 +1,44 @@
 # Protocol
 
+Here we will be working with an experimentally determined dimeric structure of Apelin Receptor (**7W0N**), another GPCR.
+
 ## Building the system with CHARMM-GUI
+
+CHARMM-GUI is a web-based platform to interactively build molecular biosystems ready to run in many different MD simulation engines (such as GROMACS). The building process is very streamlined and intuitive for new users but lacks some customization options to model very specific cases. Navigate to the `Input Generator > Martini Maker > Bilayer Builder` to start building a coarse-grained protein-membrane system. Select the latest Martini FF model (martini3.0.0). Here you can either fetch the PDB structure from RCSB or OPM but, for this specific case, it is better to download the preoriented PDB file from [OPM](https://opm.phar.umich.edu) and upload it from you computer.
+
+### Step 0: PDB manipulation
+
+Select the chains/segments from the uploaded PDB file to be modelled. The uploaded PDB file contains not only the apelin receptor structures but also the co-crystallized endogenous apelin 18-32, the trimeric Gi protein and the scFv16 construct. Since we are only interested in the apelin receptors, deselect all the other objects.
+
+Then set `ph=7.0` and choose the N- and C-termini to be neutral (not charged). We are not gonna model any of the missing residues.
+
+### Step 1: Position and orientation options
+
+Here we only want to select the PDB native orientation since we got the PDB from the preoriented OPM database.
+
+### Step 2: Cell size and lipid packing
+
+CHARMM-GUI encourages us to view the oriented PDB structure before proceding any further. Please do (you can do from the website viewer) and check that the selected chains and orientation of the two monomers is correct.
+
+Once done, establish the cell size. We will do by setting a minimum `Water thickness 15` in the Z axis and an initial guess of `Length of X and Y: 120` for the XY plane. Next, choose the phospholipid composition. For the purpose of this tutorial, we will use the simplest membrane of POPC-only membrane. Finally, click on `Show the system info` to get the calculated size of the membrane and unit cell and continue the process.
+
+### Step 3: Bilayer construction and solvation options
+
+Here we can leave the default parameters as they are. Notice that we can adjust the lipid and ions placement method as well as the salt composition and concentration.
+
+### Step 4: Solvating
+
+Check that there are no lipid penetration issues. If not, proceed with the building of the ions and water box.
+
+### Step 5: Assemble components and generate input options.
+
+All components are built, now they will be combined in a single PDB file. Specify the conditions in which to run the simulation so CHARMM-GUI can write the proper molecular dynamics parameters (.mdp) files.
+
+Finally, download the compressed .tgz file with all the generated inputs.
 
 ## GROMACS simulation
 
-Extract the files downloaded from CHARMM-GUI to your working directory.
+Copy and extract the files downloaded from CHARMM-GUI to your working directory.
 
 ```
 tar -xvf charmm-gui.tar
