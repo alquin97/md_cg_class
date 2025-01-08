@@ -2,7 +2,7 @@
 
 Here we will be working with an experimentally determined dimeric structure of Apelin Receptor (**7W0N**), another GPCR.
 
-![](practical/files/images/7w0n_pdb.png)
+![](https://raw.githubusercontent.com/alquin97/md_cg_class/refs/heads/main/practical/files/images/7w0n_pdb.png?token=GHSAT0AAAAAAC4YV42TXXCFCGQMNWA2BOQOZ36QARA)
 
 ## Building the system with CHARMM-GUI
 
