@@ -102,4 +102,4 @@ Get the sample trajectory provided in the shared folder. Visualize the trajector
 
 For this project we will carry out a **contacts analysis** between the two monomers. By 'contacts' we refer to 'atomic' interactions ocurring during the course of the MD simulation. Protein activity and mechanism of action at the molecular level are fundamentally governed by networks of atom-atom interactions, so it is extremely valuable to know which of these are the most significant and to understand how they change for different states of the system (e.g. activation).
 
-This part of the protocol will be run with the `analysis.ipynb` either in your local machine or on Google Colab.
+This part of the protocol will be run with the `analysis.ipynb` found in this same repository, either in your local machine or on Google Colab.
