@@ -2,6 +2,8 @@
 
 Here we will be working with an experimentally determined dimeric structure of Apelin Receptor (**7W0N**), another GPCR.
 
+![](practical/files/images/7w0n_pdb.png)
+
 ## Building the system with CHARMM-GUI
 
 CHARMM-GUI is a web-based platform to interactively build molecular biosystems ready to run in many different MD simulation engines (such as GROMACS). The building process is very streamlined and intuitive for new users but lacks some customization options to model very specific cases. Navigate to the `Input Generator > Martini Maker > Bilayer Builder` to start building a coarse-grained protein-membrane system. Select the latest Martini FF model (martini3.0.0). Here you can either fetch the PDB structure from RCSB or OPM but, for this specific case, it is better to download the preoriented PDB file from [OPM](https://opm.phar.umich.edu) and upload it from you computer.
