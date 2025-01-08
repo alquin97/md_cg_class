@@ -12,7 +12,7 @@ CHARMM-GUI is a web-based platform to interactively build molecular biosystems r
 
 ### Step 0: PDB manipulation
 
-Select the chains/segments from the uploaded PDB file to be modelled. The uploaded PDB file contains not only the apelin receptor structures but also the co-crystallized endogenous apelin 18-32, the trimeric Gi protein and the scFv16 construct. Since we are only interested in the apelin receptors, deselect all the other objects.
+Select the chains/segments from the uploaded PDB file to be modelled. The uploaded PDB file contains not only the apelin receptor structures but also the co-crystallized endogenous apelin 18-32, the trimeric Gi protein and the scFv16 construct. Since we are only interested in the apelin receptors, deselect all the other objects (the segment id information can be extracted from the PDB entry at the RCSB).
 
 [![](https://github.com/alquin97/md_cg_class/blob/main/practical/files/images/segment_ids.png)](#)
 
@@ -51,6 +51,8 @@ Check that there are no lipid penetration issues. If not, proceed with the build
 All components are built, now they will be combined in a single PDB file. Specify the conditions in which to run the simulation so CHARMM-GUI can write the proper molecular dynamics parameters (.mdp) files.
 
 [![](https://github.com/alquin97/md_cg_class/blob/main/practical/files/images/assemble.png)](#)
+
+[![](https://github.com/alquin97/md_cg_class/blob/main/practical/files/images/input_generator.png)](#)
 
 Finally, download the compressed .tgz file with all the generated inputs.
 
@@ -100,6 +102,4 @@ Get the sample trajectory provided in the shared folder. Visualize the trajector
 
 For this project we will carry out a **contacts analysis** between the two monomers. By 'contacts' we refer to 'atomic' interactions ocurring during the course of the MD simulation. Protein activity and mechanism of action at the molecular level are fundamentally governed by networks of atom-atom interactions, so it is extremely valuable to know which of these are the most significant and to understand how they change for different states of the system (e.g. activation).
 
-### Number of contacts
-
-### Contact frequency
+This part of the protocol will be run with the `analysis.ipynb` either in your local machine or on Google Colab.
