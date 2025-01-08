@@ -6,7 +6,7 @@ Here we will be working with an experimentally determined dimeric structure of A
 
 ## Building the system with CHARMM-GUI
 
-CHARMM-GUI is a web-based platform to interactively build molecular biosystems ready to run in many different MD simulation engines (such as GROMACS). The building process is very streamlined and intuitive for new users but lacks some customization options to model very specific cases. Navigate to the `Input Generator > Martini Maker > Bilayer Builder` to start building a coarse-grained protein-membrane system. Select the latest Martini FF model (martini3.0.0). Here you can either fetch the PDB structure from RCSB or OPM but, for this specific case, it is better to download the preoriented PDB file from [OPM](https://opm.phar.umich.edu) and upload it from you computer.
+CHARMM-GUI is a web-based platform to interactively build molecular biosystems ready to run in many different MD simulation engines (such as GROMACS). The building process is very streamlined and intuitive for new users but lacks some customization options to model very specific cases. Navigate to the `Input Generator > Martini Maker > Bilayer Builder` to start building a coarse-grained protein-membrane system. Select the latest Martini FF model (martini3.0.0). Here you can either fetch the PDB structure from RCSB or OPM but, **for this specific case, it is better to download the preoriented PDB file from [OPM](https://opm.phar.umich.edu) and upload it from you computer.**
 
 [![](https://github.com/alquin97/md_cg_class/blob/main/practical/files/images/martini_ff.png)](#)
 
@@ -102,4 +102,4 @@ Get the sample trajectory provided in the shared folder. Visualize the trajector
 
 For this project we will carry out a **contacts analysis** between the two monomers. By 'contacts' we refer to 'atomic' interactions ocurring during the course of the MD simulation. Protein activity and mechanism of action at the molecular level are fundamentally governed by networks of atom-atom interactions, so it is extremely valuable to know which of these are the most significant and to understand how they change for different states of the system (e.g. activation).
 
-This part of the protocol will be run with the `analysis.ipynb` found in this same repository, either in your local machine or on Google Colab.
+This part of the protocol will be run with the `md_cg_analysis.ipynb` found in this same repository, either in your local machine or on Google Colab.
