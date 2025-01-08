@@ -44,7 +44,9 @@ This time, the number of 'atoms' to simulate is much lower than in the ```md_mem
 
 ## Analysis
 
-Navigate to the sample files gromacs directory
+Get the sample trajectory provided in the shared folder. Visualize the trajectory in VMD or any other visualization software. 
+
+For this project we will carry out a **contacts analysis** between the two monomers. By 'contacts' we refer to 'atomic' interactions ocurring during the course of the MD simulation. Protein activity and mechanism of action at the molecular level are fundamentally governed by networks of atom-atom interactions, so it is extremely valuable to know which of these are the most significant and to understand how they change for different states of the system (e.g. activation).
 
 ### Number of contacts
 
